@@ -1,0 +1,16 @@
+[
+  {
+    "username": "IronMan",
+    "password": "secret_password",
+    "first_name": "Tony",
+    "last_name": "Stark",
+    "email": "tony@stark.com"
+  },
+  {
+    "username": "Tor",
+    "password": "secret_password",
+    "first_name": "Tor",
+    "last_name": "FromAsgard",
+    "email": "tor@asgard.com"
+  }
+]

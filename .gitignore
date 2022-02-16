@@ -1,3 +1,28 @@
-.idea/
-venv/
+### IDE ###
+.idea
+
+### Python ###
+__pycache__/
+
+### ENV ###
+.env
+
+### VENV ###
+venv
+
+### Media ###
+media/users/
+
+### BD ###
 *.sqlite3
+
+### Django ###
+*.pyc
+
+### Tests ###
+htmlcov/
+.coverage
+
+### Other ###
+help.txt
+tmp/
