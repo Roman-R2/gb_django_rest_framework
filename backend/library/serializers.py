@@ -13,7 +13,6 @@ class UserModelSerializer(ModelSerializer):
         model = ToDoUser
         fields = [
             'username',
-            'password',
             'first_name',
             'last_name',
             'email',
