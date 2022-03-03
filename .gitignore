@@ -26,3 +26,9 @@ htmlcov/
 ### Other ###
 help.txt
 tmp/
+
+### NodeJS ###
+frontend/node_modules/
+frontend/package-lock.json
+frontend/README.md
+yarn.lock
