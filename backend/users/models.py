@@ -3,12 +3,6 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
-class Author(models.Model):
-    first_name = models.CharField(max_length=64)
-    last_name = models.CharField(max_length=64)
-    dirthday_year = models.PositiveIntegerField()
-
-
 class ToDoUser(AbstractUser):
     # Переопределил, чтобы поля нельзя было оставить пустыми
     first_name = models.CharField(_('first name'), max_length=150)

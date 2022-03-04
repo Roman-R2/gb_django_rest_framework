@@ -1,11 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from .models import Author, ToDoUser
-
-
-class AuthorModelSerializer(ModelSerializer):
-    class Meta:
-        model = Author
-        fields = '__all__'
+from .models import ToDoUser
 
 
 class UserModelSerializer(ModelSerializer):

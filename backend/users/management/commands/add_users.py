@@ -5,13 +5,13 @@ from django.conf import settings
 from django.core.management import BaseCommand
 from django.db import IntegrityError
 
-from library.models import ToDoUser
+from users.models import ToDoUser
 
 
 class Command(BaseCommand):
     USER_DATA_FILE = os.path.join(
         settings.BASE_DIR,
-        'library/management/data/simple_users.json'
+        'users/management/data/simple_users.json'
     )
 
     def handle(self, *args, **options):

@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'corsheaders',
 
     # My apps
-    'library',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -135,7 +135,7 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = "library.ToDoUser"
+AUTH_USER_MODEL = "users.ToDoUser"
 
 # Параметры для создания суперпользователя
 SUPERUSER_NAME = os.getenv('SUPERUSER_NAME')
