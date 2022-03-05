@@ -18,12 +18,18 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
 from users.views import ToDoUserViewSet
+from todo.views import ProjectsViewSet, ToDoViewSet
 
 router = DefaultRouter()
 router.register('users', ToDoUserViewSet)
+router.register('projects', ProjectsViewSet)
+router.register('todos', ToDoViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls')),
 ]
+
+# Добавляем в urlpatterns маршруты из роутера DRF
+urlpatterns += router.urls
