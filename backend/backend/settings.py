@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # Third party apps
     'rest_framework',
     'corsheaders',
+    'django_filters',
 
     # My apps
     'users',
@@ -144,3 +145,18 @@ SUPERUSER_PASSWORD = os.getenv('SUPERUSER_PASSWORD')
 SUPERUSER_FIRST_NAME = os.getenv('SUPERUSER_FIRST_NAME')
 SUPERUSER_LAST_NAME = os.getenv('SUPERUSER_LAST_NAME')
 SUPERUSER_EMAIL = os.getenv('SUPERUSER_EMAIL')
+
+REST_FRAMEWORK = {
+    # 'DEFAULT_RENDERER_CLASSES': [
+    #     'rest_framework.renderers.JSONRenderer',
+    # ],
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend'
+    ],
+    'DEFAULT_PAGINATION_CLASS':
+        'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 100,
+    # 'DEFAULT_PARSER_CLASSES': (
+    #     'rest_framework.parsers.JSONParser',
+    # )
+}
