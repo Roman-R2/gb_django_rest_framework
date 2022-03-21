@@ -6,13 +6,7 @@ from .models import Project, ToDo
 
 
 class ProjectSerializer(ModelSerializer):
-
-    # def create(self, validated_data):
-    #     user = ToDoUser(**validated_data)
-    #     user.save()
-    #     return user
-
-    users = UserModelSerializer(many=True)
+    # users = UserModelSerializer(many=True)
 
     class Meta:
         model = Project
@@ -24,8 +18,8 @@ class ProjectSerializer(ModelSerializer):
 
 
 class ToDoSerializer(ModelSerializer):
-    todo_project = ProjectSerializer()
-    users = UserModelSerializer(many=True)
+    # todo_project = ProjectSerializer()
+    # users = UserModelSerializer(many=True)
 
     class Meta:
         model = ToDo
