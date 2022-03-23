@@ -32,4 +32,4 @@ urlpatterns = [
 ]
 
 # Добавляем в urlpatterns маршруты из роутера DRF
-urlpatterns += router.urls
+# urlpatterns += router.urls
