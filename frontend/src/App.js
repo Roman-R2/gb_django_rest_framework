@@ -5,6 +5,7 @@ import Menu from "./components/menu";
 import Footer from "./components/footer";
 import UserList from "./components/user_list";
 import ProjectList from "./components/project_list";
+import ProjectListId from "./components/project_list_id";
 import {HashRouter, BrowserRouter, Route, Router, Routes, Link, useLocation, Navigate} from "react-router-dom";
 
 const NotFound = () => {
@@ -58,6 +59,7 @@ class App extends React.Component {
           <Routes>
             <Route exact path='/' element={<ProjectList projects={this.state.projects}/>}/>
             <Route exact path='/users' element={<UserList users={this.state.users}/>}/>
+            <Route path='/:id' element = {<ProjectListId projects={this.state.projects} />} />
             <Route path="*" element={<NotFound/>}/>
           </Routes>
         </BrowserRouter>

@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 const ProjectItem = ({project}) => {
   return (
@@ -16,7 +16,10 @@ const ProjectItem = ({project}) => {
   )
 }
 
-const ProjectList = ({projects}) => {
+const ProjectListId = ({projects}) => {
+  let {id} = useParams()
+  let filteredProjects = projects.filter((projects) => projects.users.includes(parseInt(id)))
+
   return (
     <table>
       <th>
@@ -28,9 +31,9 @@ const ProjectList = ({projects}) => {
       <th>
         Users
       </th>
-      {projects.map((project) => <ProjectItem project={project}/>)}
+      {filteredProjects.map((project) => <ProjectItem project={project}/>)}
     </table>
   )
 }
 
-export default ProjectList
+export default ProjectListId
