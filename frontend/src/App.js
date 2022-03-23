@@ -53,13 +53,13 @@ class App extends React.Component {
   render() {
     return (
       <div>
-
         <BrowserRouter>
           <Menu/>
           <Routes>
             <Route exact path='/' element={<ProjectList projects={this.state.projects}/>}/>
+            <Route exact path='/projects' element={<Navigate to={'/'}/>}/>
             <Route exact path='/users' element={<UserList users={this.state.users}/>}/>
-            <Route path='/:id' element = {<ProjectListId projects={this.state.projects} />} />
+            <Route path='/:id' element={<ProjectListId projects={this.state.projects}/>}/>
             <Route path="*" element={<NotFound/>}/>
           </Routes>
         </BrowserRouter>
