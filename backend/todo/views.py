@@ -20,7 +20,7 @@ class ToDoLimitOffsetPagination(LimitOffsetPagination):
 class ProjectsViewSet(ModelViewSet):
     serializer_class = ProjectSerializer
     queryset = Project.objects.all()
-    pagination_class = ProjectsLimitOffsetPagination
+    # pagination_class = ProjectsLimitOffsetPagination
     # DjangoFilterBackend - фильтрация в url /?field=значение
     filter_backends = [DjangoFilterBackend]
     filter_fields = ['title']
@@ -29,6 +29,6 @@ class ProjectsViewSet(ModelViewSet):
 class ToDoViewSet(ModelViewSet):
     serializer_class = ToDoSerializer
     queryset = ToDo.objects.all()
-    pagination_class = ToDoLimitOffsetPagination
+    # pagination_class = ToDoLimitOffsetPagination
     filter_backends = [DjangoFilterBackend]
     filter_fields = ['todo_text', 'is_active']
