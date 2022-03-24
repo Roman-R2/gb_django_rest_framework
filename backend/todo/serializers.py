@@ -6,6 +6,7 @@ from .models import Project, ToDo
 
 
 class ProjectSerializer(ModelSerializer):
+
     # users = UserModelSerializer(many=True)
 
     class Meta:
