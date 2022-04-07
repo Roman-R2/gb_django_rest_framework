@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
     'django_filters',
+    'drf_yasg',
 
     # My apps
     'users',
@@ -180,10 +181,15 @@ REST_FRAMEWORK = {
 
     # Задается версия api в параметре get запроса
     # http://127.0.0.1:8000/api/users/?version=2.0
-    'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.QueryParameterVersioning',
+    # 'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.QueryParameterVersioning',
+
+    # Задается версия api в заголовках
+    # Accept: application/json; version=2.0
+    'DEFAULT_VERSIONING_CLASS':
+        'rest_framework.versioning.AcceptHeaderVersioning',
 }
 
-# from rest_framework.versioning import QueryParameterVersioning
+# from rest_framework.versioning import AcceptHeaderVersioning
 
 if DEBUG:
     REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'].append(
