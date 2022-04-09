@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
     'django_filters',
+    'drf_yasg',
 
     # My apps
     'users',
@@ -160,16 +161,35 @@ REST_FRAMEWORK = {
     # 'DEFAULT_PARSER_CLASSES': (
     #     'rest_framework.parsers.JSONParser',
     # ),
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated'
-    ],
-    # 'DEFAULT_AUTHENTICATION_CLASSES': [
-    #     'rest_framework.authentication.SessionAuthentication',
-    #     # http://login:password@127.0.0.1:8000/api/
-    #     'rest_framework.authentication.BasicAuthentication',
-    #     'rest_framework.authentication.TokenAuthentication',
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permissions.IsAuthenticated'
     # ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        # http://login:password@127.0.0.1:8000/api/
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    # Задается версия api в урле
+    # 'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.URLPathVersioning',
+
+    # Задается версия api в неймспейсе (т.е. фигурирует в path части url)
+    # 'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.NamespaceVersioning',
+
+    # Задается версия api в хосте
+    # 'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.HostNameVersioning',
+
+    # Задается версия api в параметре get запроса
+    # http://127.0.0.1:8000/api/users/?version=2.0
+    # 'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.QueryParameterVersioning',
+
+    # Задается версия api в заголовках
+    # Accept: application/json; version=2.0
+    'DEFAULT_VERSIONING_CLASS':
+        'rest_framework.versioning.AcceptHeaderVersioning',
 }
+
+# from rest_framework.versioning import AcceptHeaderVersioning
 
 if DEBUG:
     REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'].append(
